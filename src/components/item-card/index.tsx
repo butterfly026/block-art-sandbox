@@ -53,7 +53,7 @@ export default ({ data, onAddToCart }: any) => {
       rotation = defaults.rotation,
     },
   } = data;
-
+  console.log(Model);
   const quantityView =
     quantity > 0 ? <Chip color='secondary' label={`x ${quantity}`} /> : null;
 
@@ -76,6 +76,9 @@ export default ({ data, onAddToCart }: any) => {
             <Suspense fallback={null}>
               <RotatingModel animate={hovered}>
                 <group position={position} scale={scale} rotation={rotation}>
+                  {
+                    Model ? <Model></Model> : <></>
+                  }
                   {/* <Model /> */}
                 </group>
               </RotatingModel>
@@ -90,13 +93,13 @@ export default ({ data, onAddToCart }: any) => {
             </Typography>
             {quantityView}
           </Grid>
-          <Typography variant='body2' color='textSecondary' component='p'>
+          {/* <Typography variant='body2' color='textSecondary' component='p'>
             {toPesoFormat(unitPrice)}
-          </Typography>
+          </Typography> */}
         </CardContent>
       </CardActionArea>
 
-      <CardActions>
+      {/* <CardActions>
         <Button
           className={classes.addToCartBtn}
           size='small'
@@ -106,12 +109,12 @@ export default ({ data, onAddToCart }: any) => {
         >
           Add to cart
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
 
-function Lighting() {
+const Lighting = () => {
   return (
     <>
       {/* Key */}

@@ -13,7 +13,7 @@ import Fab from '@material-ui/core/Fab';
 
 import FastfoodRoundedIcon from '@material-ui/icons/FastfoodRounded';
 
-import FoodMachine from './food-machine';
+import Machine from './machine';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -90,7 +90,7 @@ export default ({ cart, open, onExit }: any) => {
       </AppBar>
 
       <div className={classes.counter}>
-        <FoodMachine cart={cart} claim={orderClaimed} />
+        <Machine cart={cart} claim={orderClaimed} />
         {fab}
       </div>
     </Dialog>

@@ -1,29 +1,29 @@
 //#region Actions
-const LOAD = 'food/LOAD';
-const ADD_TO_CART = 'food/ADD_TO_CART';
-const REMOVE_FROM_CART = 'food/REMOVE_FROM_CART';
+const LOAD = 'state/LOAD';
+const ADD_TO_CART = 'state/ADD_TO_CART';
+const REMOVE_FROM_CART = 'state/REMOVE_FROM_CART';
 //#endregion
 
 interface LoadAction {
-  type?: 'food/LOAD';
+  type?: 'state/LOAD';
   payload?: any; // Replace DataType with the actual type of your data
 }
 
 interface AddToCartAction {
-  type?: 'food/ADD_TO_CART';
+  type?: 'state/ADD_TO_CART';
   payload?: { itemName: string };
 }
 
 interface RemoveFromCartAction {
-  type?: 'food/REMOVE_FROM_CART';
+  type?: 'state/REMOVE_FROM_CART';
   payload?: { itemName: string };
 }
 
-export type FoodAction = LoadAction | AddToCartAction | RemoveFromCartAction;
+export type StateAction = LoadAction | AddToCartAction | RemoveFromCartAction;
 export const initialState = { inventory: {}, cart: {}, error: null };
 
 //#region Reducer
-export function reducer(state: FoodAction, action: FoodAction) {
+export function reducer(state: StateAction, action: StateAction) {
   switch (action.type) {
     case LOAD:
       return handleLoad(action);
